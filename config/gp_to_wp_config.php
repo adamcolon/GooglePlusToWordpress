@@ -2,11 +2,11 @@
 	require('gp_to_wp_settings.php');
 
 	// Loading Wordpress Config ---------------- Do not Edit anything below
-	$wordpress_config_path = dirname(__FILE__).'/wp-config.php';
+	$wordpress_config_path = dirname(dirname(__FILE__)).'/wp-config.php';
 	if (file_exists($wordpress_config_path)){
 		require($wordpress_config_path);
 	}else{
-		$wordpress_config_path = dirname(dirname(__FILE__)).'/wp-config.php';
+		$wordpress_config_path = dirname(dirname(dirname(__FILE__))).'/wp-config.php';
 		if (file_exists($wordpress_config_path)){
 			require($wordpress_config_path);
 		}else{
