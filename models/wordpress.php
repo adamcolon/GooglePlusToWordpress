@@ -45,7 +45,7 @@ class Wordpress{
 	function getPostTags(){
 		$tags = array();
 			
-		$sql = "SELECT term.term_id as id, term.slug as name FROM {$this->db_table_prefix}terms AS term INNER JOIN wp_term_taxonomy AS tax ON term.term_id=tax.term_id WHERE tax.taxonomy='post_tag';";
+		$sql = "SELECT term.term_id as id, term.slug as name FROM {$this->db_table_prefix}terms AS term INNER JOIN wp_term_taxonomy AS tax ON term.term_id=tax.term_id WHERE tax.taxonomy='category';";
 		$result = mysql_query($sql) or die('['.__LINE__.'] Query failed: ' . mysql_error());
 		while($rs = mysql_fetch_array($result, MYSQL_ASSOC)){
 			$tags[$rs['id']] = $rs['name'];
